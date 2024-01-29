@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Imagen del usuario en un círculo pequeño -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagePerfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/person_2_24"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="center_vertical" />
+
+
+        <TextView
+            android:id="@+id/textViewNombrePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Vista de la publicación -->
+    <ImageView
+        android:id="@+id/imageViewMedia"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"/>
+
+
+    <TextView
+        android:id="@+id/textViewContenido"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:layout_marginEnd="20dp">
+        <!-- Agrega estos elementos en tu layout -->
+        <ImageView
+            android:id="@+id/likeButton"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_liker"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:onClick="onLikeButtonClick"
+            />
+
+        <ImageView
+            android:id="@+id/saveButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_guard_r"
+            android:paddingTop="3dp"
+            android:clickable="true"
+            android:onClick="onSaveButtonClick" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".CrearPerfil">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Perfil"
+        android:textColor="@color/color_principal"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/skranji_bold"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_cp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/person_2_24"
+        app:civ_border_color="@color/color_principal"
+        app:civ_border_width="4dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/er_nombre_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Biografia"
+        android:id="@+id/er_bio_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"
+        android:paddingStart="5dp"
+        android:drawablePadding="7dp"
+        android:drawableStart="@drawable/person_2_24"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/er_email_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"
+        android:paddingStart="5dp"
+        android:drawablePadding="7dp"
+        android:drawableStart="@drawable/baseline_mail_24"
+       />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Caña"
+        android:id="@+id/er_caña_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Carrete"
+        android:id="@+id/er_carrete_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Otros accesorios"
+        android:id="@+id/er_otros_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipos de pesca"
+        android:id="@+id/er_tpesca_cp"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Guardar Usuario"
+    android:backgroundTint="@color/color_principal"
+    android:fontFamily="@font/skranji_bold"
+    app:strokeColor="@android:color/black"
+    app:strokeWidth="2dp"
+    android:id="@+id/btn_cp"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar_cp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"
+        android:visibility="invisible" />
+
+</LinearLayout>
