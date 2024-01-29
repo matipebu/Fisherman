@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <!-- Menú superior con el color DAE8FC -->
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DAE8FC"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/volver"
+            android:layout_gravity="center"
+            android:contentDescription="Icono de menú" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FISHERMAN"
+            android:textSize="35sp"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/skranji_bold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topMenu"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="-4dp">
+
+        <LinearLayout
+            android:layout_width="357dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/fondoradio"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/skranji_bold"
+                android:paddingTop="20dp"
+                android:paddingRight="40dp"
+                android:text="Crear Cuenta"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/skranji_bold"
+                android:paddingTop="20dp"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/email_crearcuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Ingrese el usuario aquí"
+                android:padding="10dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/skranji_bold"
+                android:paddingTop="25dp"
+                android:text="Contraseña"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/contraseña_crearcuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Ingrese la contraseña aquí"
+                android:padding="10dp"
+                android:paddingBottom="0dp"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/skranji_bold"
+                android:paddingTop="25dp"
+                android:text="Repite Contraseña"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/repitepass_crearcuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Repite la contraseña aquí"
+                android:padding="10dp"
+                android:paddingBottom="0dp"
+                android:textColor="@android:color/black" />
+
+            <CheckBox
+                android:id="@+id/crearcuenta_checkbox"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="@android:color/white"
+                android:text="Mostrar Contraseña"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/skranji_bold"
+                android:text="Crear cuenta"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/boton_crearcuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/colorboton"
+                android:fontFamily="@font/skranji_bold"
+                android:text="Crear Cuenta"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="2dp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar_crearcuenta"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/white"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

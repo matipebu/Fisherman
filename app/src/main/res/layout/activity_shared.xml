@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DAE8FC"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/volver"
+            android:layout_gravity="center"
+            android:contentDescription="Icono de menú" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FISHERMAN"
+            android:textSize="35sp"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/skranji_bold"/>
+        <LinearLayout
+            android:id="@+id/iconsMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#DAE8FC"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:paddingLeft="20dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add"
+                android:contentDescription="Agregar"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Botón de sobre de guardados -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_guard_s"
+                android:contentDescription="Guardados"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Botón de chat -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/id_chat_r"
+                android:contentDescription="Chat" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenido principal de la aplicación -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topMenu"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shared Posts"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewShared"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/textViewTitle"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+</RelativeLayout>

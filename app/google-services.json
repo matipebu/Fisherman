@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "191763647165",
+    "firebase_url": "https://fisherman2-5afa5-default-rtdb.firebaseio.com",
+    "project_id": "fisherman2-5afa5",
+    "storage_bucket": "fisherman2-5afa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191763647165:android:e8370afcd65cdb34acc5d4",
+        "android_client_info": {
+          "package_name": "com.example.fisherman"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxvjuopSiQGhK2HrWIbZ_jaui7nvcSXxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

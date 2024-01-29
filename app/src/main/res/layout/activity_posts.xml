@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Menú superior -->
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DAE8FC"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Icono de volver -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/volver"
+            android:layout_gravity="center_vertical"
+            android:onClick="logout"
+            android:contentDescription="Icono de menú"
+            android:id="@+id/logout"/>
+
+        <!-- Título de la aplicación -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FISHERMAN"
+            android:textSize="35sp"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/skranji_bold"/>
+
+        <!-- Iconos del menú -->
+        <LinearLayout
+            android:id="@+id/iconsMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#DAE8FC"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:paddingLeft="5dp">
+
+            <!-- Icono de agregar publicación -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add"
+                android:contentDescription="Agregar"
+                android:layout_marginEnd="10dp" />
+
+            <!-- Icono de publicaciones guardadas -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_guard_r"
+                android:contentDescription="Guardados"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Icono de chat -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/id_chat_r"
+                android:contentDescription="Chat" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenido principal de la aplicación -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topMenu"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título de la publicación -->
+        <EditText
+            android:id="@+id/editTextTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título de la publicación"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Contenido de la publicación -->
+        <EditText
+            android:id="@+id/editTextContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contenido de la publicación"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topMenu"
+        android:orientation="horizontal"
+        android:padding="16dp">
+        <!-- Botón para adjuntar imagen o video -->
+        <Button
+            android:id="@+id/btnAdjuntarImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adjuntar Imagen"
+            android:layout_marginBottom="16dp"/>
+        <!-- Botón para adjuntar video -->
+        <Button
+            android:id="@+id/btnAdjuntarVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adjuntar Video"
+            android:layout_marginBottom="16dp"/>
+        <!-- Vista previa de la imagen adjunta -->
+    </LinearLayout>
+        <ImageView
+            android:id="@+id/imageViewAdjunta"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+
+        <!-- Botón para publicar -->
+        <Button
+            android:id="@+id/btnPublicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publicar"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>
