@@ -14,15 +14,6 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/volver"
-            android:layout_gravity="center_vertical"
-            android:onClick="logout"
-            android:contentDescription="Icono de menú"
-            android:id="@+id/logout"/>
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +30,7 @@
             android:background="#DAE8FC"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:paddingLeft="5dp">
+            android:paddingLeft="20dp">
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -78,8 +69,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewPublicaciones"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
+            android:layout_height="545dp"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 

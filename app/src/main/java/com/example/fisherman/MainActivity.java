@@ -78,9 +78,13 @@ public class MainActivity extends AppCompatActivity {
                     // Ir a la pantalla CrearPerfil
                     startActivity(new Intent(MainActivity.this, CrearPerfil.class));
                     return true;
-                } else {
-                    return false;
-                }
+                } else if (item.getItemId() == R.id.logout) {
+                    logout();
+                    return true;
+                } else if (item.getItemId() == R.id.search){
+                    startActivity(new Intent(MainActivity.this, BuscarPerfilActivity.class));
+                    return true;
+                }return false;
             }
         });
     }
@@ -106,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void logout(View view) {
+    public void logout() {
         auth.signOut();
         Intent intent = new Intent(MainActivity.this, Login.class);
         startActivity(intent);
