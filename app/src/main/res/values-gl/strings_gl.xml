@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">FISHERMAN</string>
     <string name="icono_menu">Icono de menú</string>
     <string name="agregar">Engadir</string>
     <string name="guardados">Gardados</string>

@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">FISHERMAN</string>
-    <string name="title_activity_chats">ChatsActivity</string>
+    <string name="title_activity_chats" translatable="false">ChatsActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
     <string name="icono_menu">Icono de menú</string>
     <string name="agregar">Agregar</string>
     <string name="guardados">Guardados</string>
@@ -23,5 +23,6 @@
     <string name="ingrese_contraseña">Ingrese la contraseña aquí</string>
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="entrar">Entrar</string>
+    <string name="lorem_ipsum" translatable="false">asdas asd as da sd as d as d as d  asdd</string>
 
 </resources>

@@ -23,7 +23,6 @@
         <activity
             android:name=".ChatsActivity"
             android:exported="false"
-            android:label="@string/title_activity_chats"
             android:theme="@style/Theme.Fisherman" />
         <activity
             android:name=".BuscarPerfilActivity"

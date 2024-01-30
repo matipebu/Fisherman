@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">FISHERMAN</string>
     <string name="icono_menu">Icona de menú</string>
     <string name="agregar">Afegir</string>
     <string name="guardados">Desats</string>
@@ -15,7 +16,6 @@
     <string name="repite_contrasena">Repeteix Contrasenya</string>
     <string name="repite_contraseña">Repeteix la contrasenya aquí</string>
     <string name="mostrar_contraseña">Mostra Contrasenya</string>
-    <string name="app_name">FISHERMAN</string>
     <string name="login">Iniciar sessió</string>
     <string name="entrar">Entrar</string>
 </resources>
