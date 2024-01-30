@@ -1,0 +1,19 @@
+<resources>
+    <string name="icono_menu">Icono de menú</string>
+    <string name="agregar">Engadir</string>
+    <string name="guardados">Gardados</string>
+    <string name="chat">Charla</string>
+    <string name="nombre">Nome</string>
+    <string name="escribe_mensaje">Escribe o teu mensaxe</string>
+    <string name="enviar">Enviar</string>
+    <string name="crear_cuenta">Crear Conta</string>
+    <string name="email">Email</string>
+    <string name="ingrese_usuario">Introduce o usuario aquí</string>
+    <string name="contrasena">Contrasinal</string>
+    <string name="ingrese_contraseña">Introduce o contrasinal aquí</string>
+    <string name="repite_contrasena">Repite Contrasinal</string>
+    <string name="repite_contraseña">Repite o contrasinal aquí</string>
+    <string name="mostrar_contraseña">Amosar Contrasinal</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="entrar">Entrar</string>
+</resources>

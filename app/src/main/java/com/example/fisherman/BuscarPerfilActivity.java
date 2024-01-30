@@ -1,15 +1,21 @@
 package com.example.fisherman;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fisherman.Perfil;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -23,7 +29,7 @@ public class BuscarPerfilActivity extends AppCompatActivity {
     private EditText buscarEditText;
     private RecyclerView recyclerViewBuscar;
     private BuscarUsuarioAdapter perfilAdapter;
-
+    private FirebaseAuth auth;
     private FirebaseFirestore db;
 
     @Override
@@ -64,12 +70,11 @@ public class BuscarPerfilActivity extends AppCompatActivity {
     }
 
     private void buscarPerfil(String nombre) {
-
         // Realizar la búsqueda en la base de datos
         Query query = db.collection("usuarios")
                 .orderBy("name")
-                .startAt(nombre)
-                .endAt(nombre + "\uf8ff");
+                .startAt(nombre.toUpperCase())
+                .endAt(nombre.toLowerCase() + "\uf8ff");
 
         query.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -85,8 +90,33 @@ public class BuscarPerfilActivity extends AppCompatActivity {
         });
     }
 
-
     private void actualizarLista(List<Perfil> resultados) {
         perfilAdapter.actualizarDatos(resultados);
+        perfilAdapter.setOnItemClickListener(new BuscarUsuarioAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Perfil perfil) {
+                iniciarChatConUsuarioSeleccionado(perfil);
+            }
+        });
+    }
+
+    private void iniciarChatConUsuarioSeleccionado(Perfil usuarioSeleccionado) {
+        // Agregar usuarios a la lista de chats recientes
+        db.collection("chats")
+                .document(auth.getCurrentUser().getUid())
+                .collection("recientes")
+                .document(usuarioSeleccionado.getUid())
+                .set(new Chats(usuarioSeleccionado.getUid(), "Nuevo chat", System.currentTimeMillis()));
+
+        db.collection("chats")
+                .document(usuarioSeleccionado.getUid())
+                .collection("recientes")
+                .document(auth.getCurrentUser().getUid())
+                .set(new Chats(auth.getCurrentUser().getUid(), "Nuevo chat", System.currentTimeMillis()));
+
+        // Abrir la actividad de chat
+        Intent intent = new Intent(BuscarPerfilActivity.this, Chat.class);
+        intent.putExtra("receptorId", usuarioSeleccionado.getUid());
+        startActivity(intent);
     }
 }

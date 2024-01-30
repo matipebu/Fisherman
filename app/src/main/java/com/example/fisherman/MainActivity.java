@@ -68,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Posts.class));
             }
         });
+        ImageView chat = findViewById(R.id.goChat);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Redirigir a la actividad Posts
+                startActivity(new Intent(MainActivity.this, ChatsActivity.class));
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 

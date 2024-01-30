@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/skranji_bold"
-            android:text="FISHERMAN"
+            android:text="@string/app_name"
             android:textColor="#000000"
             android:textSize="35sp" />
     </LinearLayout>
@@ -44,7 +44,7 @@
             android:fontFamily="@font/skranji_bold"
             android:paddingTop="20dp"
             android:paddingRight="40dp"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
@@ -55,7 +55,7 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/skranji_bold"
             android:paddingTop="20dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_edittext"
-            android:hint="Ingrese el usuario aquí"
+            android:hint="@string/ingrese_usuario"
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:id="@+id/email_login"/>
@@ -76,7 +76,7 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/skranji_bold"
             android:paddingTop="25dp"
-            android:text="Contraseña"
+            android:text="@string/contrasena"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_edittext"
-            android:hint="Ingrese el usuario aquí"
+            android:hint="@string/ingrese_contraseña"
             android:padding="10dp"
             android:paddingBottom="0dp"
             android:textColor="@android:color/black"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:buttonTint="@android:color/white"
-            android:text="Mostrar Contraseña"
+            android:text="@string/mostrar_contraseña"
             android:textColor="@android:color/white" />
 
 
@@ -107,7 +107,7 @@
             android:layout_gravity="right"
             android:layout_marginRight="15dp"
             android:fontFamily="@font/skranji_bold"
-            android:text="Crear cuenta"
+            android:text="@string/crear_cuenta"
             android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
             android:textColor="@color/white"
             android:textSize="15sp" />
@@ -118,7 +118,7 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/colorboton"
             android:fontFamily="@font/skranji_bold"
-            android:text="Entrar"
+            android:text="@string/entrar"
             app:strokeColor="@android:color/black"
             app:strokeWidth="2dp"
             android:layout_marginTop="20dp"

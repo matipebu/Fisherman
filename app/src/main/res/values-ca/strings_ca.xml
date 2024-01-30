@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="icono_menu">Icona de menú</string>
+    <string name="agregar">Afegir</string>
+    <string name="guardados">Desats</string>
+    <string name="chat">Xat</string>
+    <string name="nombre">Nom</string>
+    <string name="escribe_mensaje">Escriu el teu missatge</string>
+    <string name="enviar">Enviar</string>
+    <string name="crear_cuenta">Crear Compte</string>
+    <string name="email">Email</string>
+    <string name="ingrese_usuario">Introduïu l\'usuari aquí</string>
+    <string name="contrasena">Contrasenya</string>
+    <string name="ingrese_contraseña">Introduïu la contrasenya aquí</string>
+    <string name="repite_contrasena">Repeteix Contrasenya</string>
+    <string name="repite_contraseña">Repeteix la contrasenya aquí</string>
+    <string name="mostrar_contraseña">Mostra Contrasenya</string>
+    <string name="app_name">FISHERMAN</string>
+    <string name="login">Iniciar sessió</string>
+    <string name="entrar">Entrar</string>
+</resources>

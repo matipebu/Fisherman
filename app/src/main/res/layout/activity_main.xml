@@ -48,12 +48,13 @@
                 android:layout_marginEnd="16dp" />
 
             <!-- Botón de chat -->
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/id_chat_r"
-                android:contentDescription="Chat" />
-        </LinearLayout>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Chat"
+            android:src="@drawable/id_chat_r"
+            android:id="@+id/goChat"/>
+    </LinearLayout>
 
     </LinearLayout>
 

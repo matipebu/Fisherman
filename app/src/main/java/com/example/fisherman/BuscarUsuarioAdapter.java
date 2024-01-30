@@ -3,24 +3,23 @@ package com.example.fisherman;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class BuscarUsuarioAdapter extends RecyclerView.Adapter<BuscarUsuarioAdapter.PerfilViewHolder> {
 
-    private List<Perfil> perfilList;
+    private List<Perfil> listaPerfiles;
+    private OnItemClickListener onItemClickListener;
 
-
-    // Constructor y métodos del adaptador
-    public BuscarUsuarioAdapter(List<Perfil> perfiles) {
-        this.perfilList = perfiles;
+    public BuscarUsuarioAdapter(List<Perfil> listaPerfiles) {
+        this.listaPerfiles = listaPerfiles;
     }
 
     @NonNull
@@ -32,43 +31,56 @@ public class BuscarUsuarioAdapter extends RecyclerView.Adapter<BuscarUsuarioAdap
 
     @Override
     public void onBindViewHolder(@NonNull PerfilViewHolder holder, int position) {
-        Perfil perfil = perfilList.get(position);
-
-        // Configurar datos del perfil en la vista
-        holder.textViewNombrePerfil.setText(perfil.getName());
-
-        // Cargar la imagen de perfil con Glide directamente en CircleImageView
-        if (perfil.getUrl() != null && !perfil.getUrl().isEmpty()) {
-            Glide.with(holder.itemView.getContext())
-                    .load(perfil.getUrl())
-                    .placeholder(R.drawable.person_2_24) // Imagen de respaldo si no hay URL válida
-                    .into(holder.imagePerfil);
-        } else {
-            // Si no hay URL de imagen, establecer una imagen de respaldo
-            holder.imagePerfil.setImageResource(R.drawable.person_2_24);
-        }
-    }
-
-    public void actualizarDatos(List<Perfil> nuevaLista) {
-        perfilList.clear();
-        perfilList.addAll(nuevaLista);
-        notifyDataSetChanged();
+        Perfil perfil = listaPerfiles.get(position);
+        holder.bind(perfil);
     }
 
     @Override
     public int getItemCount() {
-        return perfilList.size();
+        return listaPerfiles.size();
     }
 
-    // Clase interna ViewHolder
-    static class PerfilViewHolder extends RecyclerView.ViewHolder {
-        de.hdodenhof.circleimageview.CircleImageView imagePerfil;
-        TextView textViewNombrePerfil;
+    public void actualizarDatos(List<Perfil> nuevosPerfiles) {
+        listaPerfiles.clear();
+        listaPerfiles.addAll(nuevosPerfiles);
+        notifyDataSetChanged();
+    }
 
-        PerfilViewHolder(@NonNull View itemView) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(Perfil perfil);
+    }
+
+    public class PerfilViewHolder extends RecyclerView.ViewHolder {
+        private ImageView imagenPerfil;
+        private TextView textViewNombrePerfil;
+
+        public PerfilViewHolder(@NonNull View itemView) {
             super(itemView);
-            imagePerfil = itemView.findViewById(R.id.imagePerfil); // Asegúrate de usar el ID correcto
+            imagenPerfil = itemView.findViewById(R.id.imagePerfil);
             textViewNombrePerfil = itemView.findViewById(R.id.textViewNombrePerfil);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onItemClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onItemClickListener.onItemClick(listaPerfiles.get(position));
+                        }
+                    }
+                }
+            });
+        }
+
+        public void bind(Perfil perfil) {
+            // Actualizar la interfaz de usuario con la información del perfil
+            textViewNombrePerfil.setText(perfil.getName());
+            // Cargar la imagen de perfil con Picasso (o cualquier otra biblioteca de carga de imágenes)
+            Picasso.get().load(perfil.getUrl()).into(imagenPerfil);
         }
     }
 }

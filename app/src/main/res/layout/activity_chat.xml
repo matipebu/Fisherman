@@ -1,112 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/topMenu"
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#DAE8FC"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/volver"
-            android:layout_gravity="center"
-            android:contentDescription="Icono de menú" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_principal"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView
+            android:id="@+id/textViewNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FISHERMAN"
-            android:textSize="35sp"
-            android:layout_marginStart="16dp"
-            android:textColor="#000000"
-            android:fontFamily="@font/skranji_bold"/>
-        <LinearLayout
-            android:id="@+id/iconsMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#DAE8FC"
-            android:orientation="horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/white"
             android:layout_gravity="center"
-            android:paddingLeft="20dp">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_add"
-                android:contentDescription="Agregar"
-                android:layout_marginEnd="16dp" />
+            android:layout_marginStart="16dp"/>
+    </androidx.appcompat.widget.Toolbar>
 
-            <!-- Botón de sobre de guardados -->
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_guard_r"
-                android:contentDescription="Guardados"
-                android:layout_marginEnd="16dp" />
+    <!-- RecyclerView para mostrar mensajes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMensajes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutEnviarMensaje"
+        android:layout_below="@+id/toolbar"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:background="#F5F5F5"/>
 
-            <!-- Botón de chat -->
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/id_chat_s"
-                android:contentDescription="Chat" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!-- Contenido principal de la aplicación -->
-    <LinearLayout
+    <!-- Layout para enviar mensajes -->
+    <RelativeLayout
+        android:id="@+id/layoutEnviarMensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/topMenu"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:padding="8dp">
 
-        <ListView
-            android:id="@+id/chat_list_view"
+        <!-- Campo de texto para escribir mensajes -->
+        <EditText
+            android:id="@+id/editTextMensaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@android:color/darker_gray"
-            android:dividerHeight="1dp"
-            android:listSelector="@android:color/darker_gray" />
+            android:layout_toStartOf="@+id/buttonEnviar"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/escribe_mensaje"
+            android:padding="8dp"/>
 
-        <RelativeLayout
-            android:id="@+id/type_msg_layout"
-            android:layout_width="match_parent"
+        <!-- Botón para enviar mensajes -->
+        <Button
+            android:id="@+id/buttonEnviar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@android:color/white"
-            android:padding="2dp">
-
-            <EditText
-                android:id="@+id/msg_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/send_button"
-                android:ems="10"
-                android:inputType="textMultiLine"/>
-
-            <Button
-                android:id="@+id/send_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:text="Enviar"/>
-
-        </RelativeLayout>
-
-
-
-    </LinearLayout>
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="@string/enviar"
+            android:textColor="?attr/colorPrimary"/>
+    </RelativeLayout>
 </RelativeLayout>
