@@ -13,58 +13,19 @@
         android:background="#DAE8FC"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:textAlignment="center"
+        android:gravity="center"
         android:backgroundTint="@color/color_principal">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FISHERMAN"
+            android:text="GUARDADOS"
             android:textSize="35sp"
-            android:layout_marginStart="16dp"
             android:textColor="#000000"
+            android:textAlignment="center"
             android:fontFamily="@font/skranji_bold"/>
-    <LinearLayout
-            android:id="@+id/iconsMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#DAE8FC"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:paddingLeft="20dp"
-        android:backgroundTint="@color/color_principal">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_add"
-                android:contentDescription="Agregar"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/addPublicacion"/>
-
-            <!-- Botón de sobre de guardados -->
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_guard_r"
-                android:contentDescription="Guardados"
-                android:layout_marginEnd="16dp"
-                android:id="@+id/goSaved"/>
-
-            <!-- Botón de chat -->
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Chat"
-            android:src="@drawable/id_chat_r"
-            android:id="@+id/goChat"/>
-        <!-- Botón de chat -->
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:contentDescription="Chat"
-            android:src="@drawable/id_chat_r"
-            android:id="@+id/goMap"/>
-    </LinearLayout>
 
     </LinearLayout>
 

@@ -149,7 +149,7 @@ public class Posts extends AppCompatActivity {
                 String mediaUrl = uri.toString();
 
                 // Use the class-level uniqueId as the document ID when creating the Publicacion instance
-                Publicacion publicacion = new Publicacion(uniqueId, contenidoEditText.getText().toString().trim(), currentUser.getUid(), mediaUrl, 0, 0, null);
+                Publicacion publicacion = new Publicacion(uniqueId, contenidoEditText.getText().toString().trim(), currentUser.getUid(), mediaUrl, null,0);
                 guardarPublicacion(publicacion);
             });
         });
@@ -169,7 +169,6 @@ public class Posts extends AppCompatActivity {
                                 // Establecer el nuevo ID del documento en la Publicacion
                                 publicacion.setDocumentId(nuevoDocumentId);
                                 uniqueId = nuevoDocumentId;
-                                // Resto del código...
                             }
                         } else {
                             Toast.makeText(Posts.this, "Error al publicar", Toast.LENGTH_SHORT).show();

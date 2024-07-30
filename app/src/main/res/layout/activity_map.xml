@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Top Menu -->
+    <LinearLayout
+        android:id="@+id/topMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_principal"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Localizaciones"
+            android:textSize="35sp"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000"
+            android:fontFamily="@font/skranji_bold"/>
+
+    </LinearLayout>
+
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="683dp"
+        android:layout_gravity="top|end"
+        android:layout_below="@id/topMenu" />
+
+    <!-- Bottom Sheet -->
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:contentDescription="@string/close_button"
+            android:layout_gravity="end"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
+        <Spinner
+            android:id="@+id/spinnerMarkerIcons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
+
+        <EditText
+            android:id="@+id/edtTypeOfFishing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type of Fishing"/>
+
+        <EditText
+            android:id="@+id/edtFishSpecies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fish Species"/>
+
+        <EditText
+            android:id="@+id/edtComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comments"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"/>
+    </LinearLayout>
+
+    <!-- Second Bottom Sheet -->
+
+    <!-- Bottom Navigation View -->
+    <LinearLayout
+        android:id="@+id/bottom_sheet_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_nav"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <ImageView
+            android:id="@+id/btnCloseSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:contentDescription="@string/close_button"
+            android:focusable="true"
+            android:padding="3dp"
+            android:src="@drawable/ic_close"
+           />
+
+        <Button
+            android:id="@+id/btnAction1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Action 1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAction2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Action 2"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+android:id="@+id/bottom_nav"
+android:layout_width="match_parent"
+android:layout_height="66dp"
+android:layout_alignParentBottom="true"
+android:background="@color/color_principal"
+app:itemIconTint="@color/black"
+app:menu="@menu/menu_abajo"/>
+
+    </RelativeLayout>

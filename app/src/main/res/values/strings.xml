@@ -11,7 +11,7 @@
     <string name="guardados">Guardados</string>
     <string name="chat">Chat</string>
     <string name="nombre">Nombre</string>
-    <string name="escribe_mensaje">Escribe tu mensaje</string>
+    <string name="escribe_mensaje">Escribe tu message</string>
     <string name="enviar">Enviar</string>
     <string name="repite_contrasena">Repite Contraseña</string>
     <string name="repite_contraseña">Repite la contraseña aquí</string>
@@ -24,5 +24,16 @@
     <string name="crear_cuenta">Crear cuenta</string>
     <string name="entrar">Entrar</string>
     <string name="lorem_ipsum" translatable="false">asdas asd as da sd as d as d as d  asdd</string>
-
+    <string name="close_button" translatable="false">button close</string>
+    <string name="weather_icon" />
+    <string name="temperature">temperatura</string>
+    <string name="time">tiempo</string>
+    <string name="description">descripcion</string>
+    <string name="location">location</string>
+    <string name="date">fecha</string>
+    <string-array name="marker_icons_array">
+            <item>Azure</item>
+            <item>Red</item>
+            <!-- Agrega más íconos aquí -->
+    </string-array>
 </resources>

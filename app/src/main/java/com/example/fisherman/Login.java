@@ -77,32 +77,33 @@ public class Login extends AppCompatActivity {
         ini_sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mail = email.getText().toString();
-                String pass = contraseña.getText().toString();
-                if(!TextUtils.isEmpty(mail)||!TextUtils.isEmpty(pass)) {
-                        progressBar.setVisibility(View.VISIBLE);
-                        mAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    sendtoMain();
-                                    progressBar.setVisibility(View.INVISIBLE);
+                String mail = email.getText().toString().trim();
+                String pass = contraseña.getText().toString().trim();
 
-                                } else {
-                                    String error = task.getException().getMessage();
-                                    Toast.makeText(Login.this, "Error: " + error, Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-
-                }else{
-                    Toast.makeText(Login.this, "Por favor rellena todos los campos", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(mail) || TextUtils.isEmpty(pass)) {
+                    Toast.makeText(Login.this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                progressBar.setVisibility(View.VISIBLE);
+                ini_sesion.setEnabled(false); // Deshabilita el botón durante el proceso de inicio de sesión
+
+                mAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.INVISIBLE);
+                        ini_sesion.setEnabled(true); // Habilita el botón después de completar el inicio de sesión
+
+                        if (task.isSuccessful()) {
+                            sendtoMain();
+                        } else {
+                            String error = task.getException().getMessage();
+                            Toast.makeText(Login.this, "Error: " + error, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
-
-
-
 
     }
 
@@ -121,7 +122,18 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean b) {
+                if (b) {
+                    contraseña.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
 
+                } else {
+                    contraseña.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+                }
+            }
+        });
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null){
             sendtoMain();

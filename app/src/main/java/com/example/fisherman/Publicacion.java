@@ -4,32 +4,36 @@ import com.google.firebase.firestore.ServerTimestamp;
 
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Publicacion {
     private String documentId;
     private String contenido;
     private String userId;
     private String mediaUrl;
-    private int likes;
-    private int saves;
     @ServerTimestamp
     private Date timestamp;
 
+    private int likes;
 
-    // Constructor vacío requerido para Firestore
-    public Publicacion() {
-    }
+
 
     // Constructor con todos los campos, incluido documentId
-    public Publicacion(String documentId, String contenido, String userId, String mediaUrl, int likes, int saves, Date timestamp) {
-
+    public Publicacion(String documentId, String contenido, String userId, String mediaUrl, Date timestamp, int likes) {
+        this.documentId = documentId;
         this.contenido = contenido;
         this.userId = userId;
         this.mediaUrl = mediaUrl;
         this.likes = likes;
-        this.saves = saves;
         this.timestamp = timestamp;
+
+
+    }
+    public Publicacion() {
     }
 
     public int getLikes() {
@@ -40,13 +44,7 @@ public class Publicacion {
         this.likes = likes;
     }
 
-    public int getSaves() {
-        return saves;
-    }
 
-    public void setSaves(int saves) {
-        this.saves = saves;
-    }
     public String getContenido() {
         return contenido;
     }
@@ -78,6 +76,7 @@ public class Publicacion {
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
+
     public String getDocumentId() {
         return documentId;
     }
@@ -85,6 +84,7 @@ public class Publicacion {
     public void setDocumentId(String documentId) {
         this.documentId = documentId;
     }
+
 
 
 }

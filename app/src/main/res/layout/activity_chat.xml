@@ -1,66 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_chat.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity">
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_principal"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <TextView
-            android:id="@+id/textViewNombreUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"/>
-    </androidx.appcompat.widget.Toolbar>
-
-    <!-- RecyclerView para mostrar mensajes -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMensajes"
+    <ListView
+        android:id="@+id/listViewChat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/layoutEnviarMensaje"
-        android:layout_below="@+id/toolbar"
-        android:padding="8dp"
-        android:clipToPadding="false"
-        android:background="#F5F5F5"/>
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:layout_above="@+id/editTextMessage"
+        android:layout_marginBottom="10dp"/>
 
-    <!-- Layout para enviar mensajes -->
-    <RelativeLayout
-        android:id="@+id/layoutEnviarMensaje"
+    <EditText
+        android:id="@+id/editTextMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:padding="8dp">
+        android:layout_marginTop="10dp"
+        android:hint="Type a message"/>
 
-        <!-- Campo de texto para escribir mensajes -->
-        <EditText
-            android:id="@+id/editTextMensaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/buttonEnviar"
-            android:background="@drawable/rounded_edittext"
-            android:hint="@string/escribe_mensaje"
-            android:padding="8dp"/>
-
-        <!-- Botón para enviar mensajes -->
-        <Button
-            android:id="@+id/buttonEnviar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="@string/enviar"
-            android:textColor="?attr/colorPrimary"/>
-    </RelativeLayout>
+    <Button
+        android:id="@+id/buttonSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_alignBottom="@+id/editTextMessage"
+        android:layout_alignParentEnd="true"/>
 </RelativeLayout>

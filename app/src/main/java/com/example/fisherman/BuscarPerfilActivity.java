@@ -24,7 +24,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuscarPerfilActivity extends AppCompatActivity {
+/**
+ * La clase `BuscarPerfilActivity` permite a los usuarios buscar perfiles por nombre.
+ */
+// BuscarPerfilActivity.java
+public class BuscarPerfilActivity extends AppCompatActivity implements BuscarUsuarioAdapter.OnItemClickListener {
 
     private EditText buscarEditText;
     private RecyclerView recyclerViewBuscar;
@@ -49,6 +53,9 @@ public class BuscarPerfilActivity extends AppCompatActivity {
         recyclerViewBuscar.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewBuscar.setAdapter(perfilAdapter);
 
+        // Configurar el listener en el adaptador
+        perfilAdapter.setOnItemClickListener(this);
+
         // Añadir un TextWatcher al EditText para realizar la búsqueda mientras escribes
         buscarEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -69,6 +76,11 @@ public class BuscarPerfilActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método privado para buscar perfiles en la base de datos según el nombre proporcionado.
+     *
+     * @param nombre El nombre para realizar la búsqueda.
+     */
     private void buscarPerfil(String nombre) {
         // Realizar la búsqueda en la base de datos
         Query query = db.collection("usuarios")
@@ -90,33 +102,18 @@ public class BuscarPerfilActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Método privado para actualizar la lista de resultados en el adaptador.
+     *
+     * @param resultados Lista de perfiles encontrados.
+     */
     private void actualizarLista(List<Perfil> resultados) {
         perfilAdapter.actualizarDatos(resultados);
-        perfilAdapter.setOnItemClickListener(new BuscarUsuarioAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Perfil perfil) {
-                iniciarChatConUsuarioSeleccionado(perfil);
-            }
-        });
     }
 
-    private void iniciarChatConUsuarioSeleccionado(Perfil usuarioSeleccionado) {
-        // Agregar usuarios a la lista de chats recientes
-        db.collection("chats")
-                .document(auth.getCurrentUser().getUid())
-                .collection("recientes")
-                .document(usuarioSeleccionado.getUid())
-                .set(new Chats(usuarioSeleccionado.getUid(), "Nuevo chat", System.currentTimeMillis()));
+    @Override
+    public void onItemClick(Perfil perfil, String otherUserId) {
 
-        db.collection("chats")
-                .document(usuarioSeleccionado.getUid())
-                .collection("recientes")
-                .document(auth.getCurrentUser().getUid())
-                .set(new Chats(auth.getCurrentUser().getUid(), "Nuevo chat", System.currentTimeMillis()));
-
-        // Abrir la actividad de chat
-        Intent intent = new Intent(BuscarPerfilActivity.this, Chat.class);
-        intent.putExtra("receptorId", usuarioSeleccionado.getUid());
-        startActivity(intent);
     }
 }
+

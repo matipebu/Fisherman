@@ -31,7 +31,7 @@
         android:layout_below="@id/topMenu"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/fondoradio"
         android:orientation="vertical">
@@ -60,14 +60,14 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/email_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_edittext"
             android:hint="@string/ingrese_usuario"
             android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:id="@+id/email_login"/>
+            android:textColor="@android:color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,6 +81,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/contraseña_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -88,8 +89,8 @@
             android:hint="@string/ingrese_contraseña"
             android:padding="10dp"
             android:paddingBottom="0dp"
-            android:textColor="@android:color/black"
-            android:id="@+id/contraseña_login"/>
+            android:textColor="@android:color/black" />
+
         <CheckBox
             android:id="@+id/login_checkbox"
             android:layout_width="200dp"
@@ -113,17 +114,16 @@
             android:textSize="15sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/iniciar_sesion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/colorboton"
             android:fontFamily="@font/skranji_bold"
             android:text="@string/entrar"
             app:strokeColor="@android:color/black"
-            app:strokeWidth="2dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/iniciar_sesion"
-            />
+            app:strokeWidth="2dp" />
 
         <ProgressBar
             android:id="@+id/progressbar_login"
