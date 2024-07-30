@@ -313,7 +313,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     }
 
     private void fetchFiveDayForecast(LatLng location, String targetDate) {
-        String apiKey = "5a2112d4e8efe6b74cec896e15f1a230"; // Reemplaza con tu clave API
+        String apiKey = "api"; // Reemplaza con tu clave API
         String url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + location.latitude + "&lon=" + location.longitude + "&appid=" + apiKey + "&units=metric";
 
         OkHttpClient client = new OkHttpClient();
